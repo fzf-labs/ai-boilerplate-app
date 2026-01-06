@@ -145,6 +145,11 @@ $(foreach st,$(SUBTREES),$(eval $(call make-push-target,$(st))))
 $(foreach st,$(SUBTREES),$(eval $(call make-add-target,$(st))))
 $(foreach st,$(SUBTREES),$(eval $(call make-diff-target,$(st))))
 
+# 添加所有 subtree
+subtree-add-all: $(foreach name,$(SUBTREE_NAMES),subtree-add-$(name))
+	@echo ""
+	@echo "$(COLOR_GREEN)✓ 所有 subtree 添加完成$(COLOR_RESET)"
+
 # 批量操作
 subtree-pull-all: $(foreach name,$(SUBTREE_NAMES),subtree-pull-$(name))
 	@echo ""
