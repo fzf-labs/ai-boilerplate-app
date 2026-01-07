@@ -168,6 +168,7 @@ export default defineConfig(({ command, mode }) => {
     resolve: {
       alias: {
         '@': path.join(process.cwd(), './src'),
+        '#': path.join(process.cwd(), './src'),
         '@img': path.join(process.cwd(), './src/static/images'),
       },
     },
